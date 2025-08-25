@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <title>Slick Unit Converter • Mobile</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="apple-touch-icon" href="EzlikBrowser.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="theme-color" content="#0b0f16"/>
+</head>
+<body>
+  <header class="app-header glass">
+    <div class="brand">
+      <img id="brandLogo" src="EzlikBrowser.png" alt="Logo" onerror="this.src='logo.png';" />
+      <h1>Slick Unit Converter</h1>
+    </div>
+    <button id="installBtn" class="ghost" hidden>Add to Home</button>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <div class="row">
+        <label class="lbl">Value</label>
+        <input id="valueInput" class="input" placeholder="e.g. 3 or 2*pi" inputmode="decimal" />
+      </div>
+
+      <div class="row grid-2">
+        <div>
+          <label class="lbl">From</label>
+          <input id="fromSearch" class="input" placeholder="Search unit…" />
+          <select id="fromUnit" class="select"></select>
+        </div>
+        <div>
+          <label class="lbl">To</label>
+          <input id="toSearch" class="input" placeholder="Search unit…" />
+          <select id="toUnit" class="select"></select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pills" id="categoryPills"></div>
+      </div>
+
+      <div class="row keypad">
+        <button data-k="7">7</button><button data-k="8">8</button><button data-k="9">9</button><button data-k="/">÷</button><button data-k="back">⌫</button>
+        <button data-k="4">4</button><button data-k="5">5</button><button data-k="6">6</button><button data-k="*">×</button><button data-k="(">(</button>
+        <button data-k="1">1</button><button data-k="2">2</button><button data-k="3">3</button><button data-k="-">−</button><button data-k=")">)</button>
+        <button data-k="0">0</button><button data-k=".">.</button><button data-k="neg">±</button><button data-k="+">+</button><button data-k="clr">C</button>
+      </div>
+
+      <div class="row keypad math">
+        <button data-k="^">^</button><button data-k="sqrt(">√</button>
+        <button data-k="sin(">sin</button><button data-k="cos(">cos</button><button data-k="tan(">tan</button>
+        <button data-k="pi">π</button><button data-k="e">e</button>
+        <label class="toggle"><input type="checkbox" id="degMode"><span>Trig in °</span></label>
+        <button id="evalBtn" class="accent">=</button>
+      </div>
+
+      <div class="row actions">
+        <button id="swapBtn" class="ghost">Swap ⟷</button>
+        <button id="convertBtn" class="primary">Convert</button>
+      </div>
+
+      <div id="result" class="result">Result will appear here</div>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <label class="lbl">Quick Examples</label>
+        <div class="chips" id="examples"></div>
+      </div>
+      <div class="row">
+        <label class="lbl">History</label>
+        <ul id="history"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">© <span id="yr"></span> Ezlik — Ultra‑slick conversions</footer>
+  <script src="app.js"></script>
+</body>
+</html>
